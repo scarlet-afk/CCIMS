@@ -1,0 +1,23 @@
+﻿@{
+	ViewData["Title"] = "Home";
+}
+
+<div class="text-center mt-5">
+	<h1 class="display-5">Case & Crime Investigation Management System</h1>
+	<p class="lead mt-3">
+		Manage cases, investigation logs and investigator activity securely.
+	</p>
+
+	<div class="mt-4">
+		<a asp-controller="Cases" asp-action="Index" class="btn btn-primary btn-lg me-2">
+			View Cases
+		</a>
+
+		@if(User.IsInRole("Investigator"))
+		{
+			<a asp-controller="Cases" asp-action="Create" class="btn btn-success btn-lg">
+				Create New Case
+			</a>
+		}
+	</div>
+</div>
